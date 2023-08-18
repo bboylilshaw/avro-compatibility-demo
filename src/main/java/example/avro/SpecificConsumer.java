@@ -12,9 +12,9 @@ public class SpecificConsumer {
     public static void main(String[] args) throws IOException {
         File file = new File("users.avro");
         // Deserialize Users from disk
-        DatumReader<User> datumReader = new SpecificDatumReader<>(User.class);
-        DataFileReader<User> dataFileReader = new DataFileReader<>(file, datumReader);
-        User user = null;
+        DatumReader<NewUser> datumReader = new SpecificDatumReader<>(NewUser.class);
+        DataFileReader<NewUser> dataFileReader = new DataFileReader<>(file, datumReader);
+        NewUser user = null;
         while (dataFileReader.hasNext()) {
             // Reuse user object by passing it to next(). This saves us from
             // allocating and garbage collecting many objects for files with

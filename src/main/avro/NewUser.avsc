@@ -1,7 +1,7 @@
 {
   "namespace": "example.avro",
   "type": "record",
-  "name": "User",
+  "name": "NewUser",
   "fields": [
     {
       "name": "name",
@@ -21,6 +21,20 @@
         "string",
         "null"
       ]
+    },
+    {
+      "name": "debug",
+      "type": [
+        "null",
+        {
+          "type": "map",
+          "values": [
+            "null",
+            "string"
+          ]
+        }
+      ],
+      "default": null
     }
   ]
 }

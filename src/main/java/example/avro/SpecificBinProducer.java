@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 
-public class SpecificProducer {
+public class SpecificBinProducer {
     public static void main(String[] args) throws IOException {
         NewUser user1 = new NewUser();
         user1.setName("Alyssa");
