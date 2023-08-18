@@ -23,7 +23,10 @@ public class SpecificBinProducer {
 
         // Construct via builder
 //        User user3 = User.newBuilder().setName("Charlie").setFavoriteColor("blue").setFavoriteNumber(null).build();
-        NewUser user3 = NewUser.newBuilder().setName("Charlie").setFavoriteColor("blue").build();
+        NewUser user3 = NewUser.newBuilder()
+                               .setName("Charlie")
+                               .setFavoriteColor("blue")
+                               .build();
 
         System.out.println(user1);
 //        System.out.println(user2);
