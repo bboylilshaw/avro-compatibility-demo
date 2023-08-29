@@ -1,5 +1,6 @@
-package example.avro;
+package example.avro.binary;
 
+import example.avro.User;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericData;
 import org.apache.avro.generic.GenericDatumWriter;
@@ -12,20 +13,19 @@ import org.apache.commons.io.FileUtils;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
 
 public class SpecificToGenericBinProducer {
     public static void main(String[] args) throws IOException {
-        NewUser user = new NewUser();
+        User user = new User();
         user.setName("Alyssa");
-//        user.setDebug(new HashMap<>());
         user.setFavoriteNumber(12);
 
+        File file = new File("user_generic_bin1.avro");
         Schema schema = new Schema.Parser().parse(new File("src/main/avro/User.avsc"));
+        Schema newUserSchema = new Schema.Parser().parse(new File("src/main/avro/NewUser.avsc"));
 
         GenericRecord genericUser = convertToGenericRecord(schema, user);
 
-        File file = new File("user_bin.avro");
         DatumWriter<GenericRecord> datumWriter = new GenericDatumWriter<>(schema);
 
         ByteArrayOutputStream out = new ByteArrayOutputStream();

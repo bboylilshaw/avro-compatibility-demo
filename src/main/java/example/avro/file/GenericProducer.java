@@ -1,4 +1,4 @@
-package example.avro;
+package example.avro.file;
 
 import org.apache.avro.Schema;
 import org.apache.avro.file.DataFileWriter;

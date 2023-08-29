@@ -1,5 +1,6 @@
-package example.avro;
+package example.avro.file;
 
+import example.avro.NewUser;
 import org.apache.avro.file.DataFileWriter;
 import org.apache.avro.io.DatumWriter;
 import org.apache.avro.specific.SpecificDatumWriter;
@@ -8,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 
-public class SpecificBinProducer {
+public class SpecificProducer {
     public static void main(String[] args) throws IOException {
         NewUser user1 = new NewUser();
         user1.setName("Alyssa");
@@ -23,10 +24,7 @@ public class SpecificBinProducer {
 
         // Construct via builder
 //        User user3 = User.newBuilder().setName("Charlie").setFavoriteColor("blue").setFavoriteNumber(null).build();
-        NewUser user3 = NewUser.newBuilder()
-                               .setName("Charlie")
-                               .setFavoriteColor("blue")
-                               .build();
+        NewUser user3 = NewUser.newBuilder().setName("Charlie").setFavoriteColor("blue").build();
 
         System.out.println(user1);
 //        System.out.println(user2);

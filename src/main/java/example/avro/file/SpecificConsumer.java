@@ -1,5 +1,6 @@
-package example.avro;
+package example.avro.file;
 
+import example.avro.NewUser;
 import org.apache.avro.file.DataFileReader;
 import org.apache.avro.io.DatumReader;
 import org.apache.avro.specific.SpecificDatumReader;
